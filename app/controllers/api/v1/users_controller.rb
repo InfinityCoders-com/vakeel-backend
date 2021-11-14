@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
     if user.present?
       render json: {content: user, meta: {total_entries: user.total_entries}}, status: 200
     else
-      render json: {}, status: 204
+      render json: {content: [], message: 'No user Found'}, status: 204
     end
   end
 
