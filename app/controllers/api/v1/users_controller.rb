@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authenticate_request, only: %w(create)
+  skip_before_action :authenticate_request, only: %w(create index)
 
   def index
     user = User.advocates.paginate(page: params[:page], per_page: params[:per_page])
@@ -21,6 +21,6 @@ class Api::V1::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :phone_number)
+    params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :salutation, :middle_name, :address_line_1, :address_line_2, :city, :state, :country, :pincode, :secondary_phone, :experience, :practicing, :academic_degrees => [])
   end
 end

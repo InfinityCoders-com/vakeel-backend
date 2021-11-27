@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_165446) do
+ActiveRecord::Schema.define(version: 2021_11_27_140454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(version: 2021_07_10_165446) do
     t.string "role_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "salutation"
+    t.string "middle_name"
+    t.text "address_line_1"
+    t.text "address_line_2"
+    t.string "city"
+    t.string "state"
+    t.string "country", default: "India"
+    t.integer "pincode"
+    t.string "secondary_phone"
+    t.text "academic_degrees", default: [], array: true
+    t.string "experience"
+    t.string "practicing"
   end
 
 end
