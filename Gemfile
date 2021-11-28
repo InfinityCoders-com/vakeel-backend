@@ -42,3 +42,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jwt'
 gem 'simple_command'
 gem 'will_paginate', '3.1.7'
+gem "attr_encrypted", "~> 3.1.0"

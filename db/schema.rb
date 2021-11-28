@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_27_140454) do
+ActiveRecord::Schema.define(version: 2021_11_27_183835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(version: 2021_11_27_140454) do
     t.text "academic_degrees", default: [], array: true
     t.string "experience"
     t.string "practicing"
+    t.text "security_question"
+    t.text "encrypted_security_answer"
+    t.text "encrypted_security_answer_iv"
   end
 
 end
