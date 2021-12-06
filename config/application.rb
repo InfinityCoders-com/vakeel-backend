@@ -36,7 +36,13 @@ module Lawyer
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-    config.autoload_paths << Rails.root.join('lib')
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: %i[get post delete put patch options]
+      end
+    end
     config.autoloader = :classic
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
